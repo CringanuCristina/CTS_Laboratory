@@ -1,0 +1,10 @@
+Code Review
+
+Phase 1 - Naming conventions
+-rename clasa1
+-reneme Calculeaza and use lowerCamelCase
+-rename t,s,perioada
+-rename result
+-rename valoare
+
+-remove hard-coded values aka "magic numbers"
