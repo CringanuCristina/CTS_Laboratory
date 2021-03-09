@@ -8,5 +8,7 @@ public enum ProductType {
 	private ProductType(float discount) {
 		this.discountValue = discount;
 	}
-	
+	public float getDiscount() {
+		return this.discountValue;
+	}
 }
