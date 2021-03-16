@@ -1,9 +1,9 @@
 package ro.ase.csie.cts.g1094.refactor.phase4;
 
+import ro.ase.csie.cts.g1094.refactor.exeptions.InvalidYearsSinceRegistration;
+
 public interface SalesValidatorInterface {
-	 public abstract void validPrice(float initial Price) {
-		 if(initial price<= 0 ) {
-			 throw new InvalidValueExceptions();
-		 }
-	 }
+	 public abstract void validatwPrice(float initialPrice);
+	public abstract void validateYearsSinceRegistration(int accountAge) throws InvalidYearsSinceRegistration;
+	
 }
