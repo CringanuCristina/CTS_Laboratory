@@ -1,0 +1,9 @@
+package ro.ase.cts.g1092.refactoring.phase5.services;
+
+import ro.ase.cts.g1092.refactoring.phase5.marketing.MarketingStrategyInterface;
+
+public class Marketing2021Service implements MarketingStrategyInterface {
+	public static float getFidelityDiscount(int yearsSinceRegistration) {
+		return (yearsSinceRegistration > FIDELITY_YEARS_THRESHOLD) ? MAX_FIDELITY_DISCOUNT : 0;
+	}
+}
