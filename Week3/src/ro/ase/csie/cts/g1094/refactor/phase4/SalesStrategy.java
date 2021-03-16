@@ -2,14 +2,22 @@ package ro.ase.csie.cts.g1094.refactor.phase4;
 import ro.ase.csie.cts.g1094.refactor.exeptions.InvalidValueExceptions;
 
 public class SalesStrategy {
+	MarketingStrateryInterface mkStrategy =null;
+	SalesValidatorInterface validator = null;
 	
-	public static final int FIDELITY_YEARS_THRESHOLD = 10;
-	public static final float MAX_FIDELITY_DISCOUNT = 0.15f;
+	public SalesStrategy(MarketingStrategyInterface mkStrategy, SalesValidatorInterface validator) {
+		if(mkStrategy == null || validator ==null) {
+			throw new NullPointerException();
+		}
+		this.mkStrategy = mkStrategy;
+		this.validator = validator;
+	}
 	
-	
-	public static float getFidelityDiscount(int yearsSinceRegistration)
-	{
-		return (yearsSinceRegistration > FIDELITY_YEARS_THRESHOLD) ? MAX_FIDELITY_DISCOUNT : (float)yearsSinceRegistration/100; 
+	void setMarketingStrategy(MarketingStrategyInterface mkStrategy) {
+		if(mkStrategy == null) {
+			throw new NullPointerException();
+		}
+		this.mkStrategy = mkStrategy;
 	}
 	
 	public static float getPriceWithDiscount(
@@ -17,7 +25,8 @@ public class SalesStrategy {
 		
 		return (initialPrice - (discount * initialPrice)) - fidelityDiscount * (initialPrice - (discount * initialPrice));
 	}
-	
+	//validator.validatePrice(initialPrice);
+	//validator.validatorYearsSinceRegistration;
 	public float computeFinalPrice(
 			ProductType productType, float initialPrice, int yearsSinceRegistration) throws InvalidValueExceptions
 	  {
