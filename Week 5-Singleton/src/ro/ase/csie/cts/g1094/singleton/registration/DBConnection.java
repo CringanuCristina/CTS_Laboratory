@@ -1,12 +1,13 @@
-package ro.ase.csie.cts.g1094.singleton;
+package ro.ase.csie.cts.g1094.singleton.registration;
+
+import java.util.Hashtable;
 
 public class DBConnection {
-
 	String connString;
 	String schema;
 	
-	private static DBConnection connection = null;
-	
+	private static Hashtable<String,DBConnection> connections = new Hashtable<>();
+
 	private DBConnection() {
 		System.out.println("Creating a connection object");
 		System.out.println("Loading configuration...");
@@ -19,20 +20,16 @@ public class DBConnection {
 		this.connString = connString;
 		this.schema = schema;
 	}
-	//lazy instantiation of unique object
-	public static DBConnection getConnection() {
-		if(DBConnection.connection == null) {
-			connection = new DBConnection();
-		}
-		return DBConnection.connection;
-	}
 	
-	//It's not clean
-	//Misleading- others they think the have more connections
 	public static DBConnection getConnection(String connString, String schema) {
-		if(DBConnection.connection == null) {
+		DBConnection connection = connections.get(connString);
+		if(connection == null) {
 			connection = new DBConnection(connString, schema);
+			connections.put(connString, connection);
 		}
-		return DBConnection.connection;
+		return connection;
 	}
+
+
+	
 }
