@@ -6,7 +6,7 @@ public enum DBConnection {
 	String connString;
 	String schema;
 	
-	publuc DBConnection() {
+	private DBConnection() {
 		System.out.println("Loading settings from the conf file");
 	}
 	
