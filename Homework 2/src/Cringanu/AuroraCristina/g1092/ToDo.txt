@@ -1,0 +1,10 @@
+
+     Singleton
+     Factory (Simple or Method)
+     Builder
+     Prototype
+     Decorator
+     Adapter
+     Proxy
+     Flyweight
+     Composite (optional)

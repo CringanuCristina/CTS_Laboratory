@@ -13,7 +13,7 @@ public class TestSingleton {
 
 		DBConnection con1 = DBConnection.getConnection();
 		DBConnection con2 = DBConnection.getConnection();
-		
+
 		//DBConnection con1 = DBConnection.getConnection("100.123", "cts");
 		//DBConnection con2 = DBConnection.getConnection("100.123", "cts");
 		

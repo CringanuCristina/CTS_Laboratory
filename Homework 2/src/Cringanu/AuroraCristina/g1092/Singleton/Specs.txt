@@ -1,0 +1,14 @@
+Singleton
+
+The title of the bachelor topic: Developing a CRM application
+
+Description of the problem to be solved by pattern: 
+A management of database connections of employees. Each employee has different connections to the DB. 
+
+Advantages for the solution (2-3 bullets):
+-Instance control
+-Flexibility
+
+Disadvantages (2-3 bullets):
+-
+-
